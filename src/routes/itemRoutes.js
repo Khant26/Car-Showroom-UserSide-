@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 router.get("/", getAllDetails);
 router.get("/:id", getItemById);
-router.post("/", createItem);
+router.post("/items", createItem);
 router.put("/:id", updateItem);
 router.delete("/:id", deleteItem);
 

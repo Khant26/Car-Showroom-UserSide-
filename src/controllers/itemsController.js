@@ -23,7 +23,7 @@ export async function getItemById(req, res) {
 
 export async function createItem(req, res) {
   try {
-    const { title, content } = req.body;
+    const { title, details } = req.body;
     const item = new Item({ title, details });
     const savedItem = await item.save();
     res.status(201).json(savedItem);
@@ -35,7 +35,7 @@ export async function createItem(req, res) {
 
 export async function updateItem(req, res) {
   try {
-    const { title, content } = req.body;
+    const { title, details } = req.body;
     await Item.findByIdAndUpdate(req.params.id, { title, details }),
       {
         new: true,

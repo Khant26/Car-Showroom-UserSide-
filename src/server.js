@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5001;
 
 connectDB();
 //middleware
-// app.use(express.json()); ///this middleware will parse Json bodies: req.body
+app.use(express.json()); ///this middleware will parse Json bodies: req.body
 // app.use(ratelimiter);
 
 //Simple custom middleware  test for middle ware
