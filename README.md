@@ -1,8 +1,15 @@
-# Car Showroom - React Vite Project
+# Car Showroom Web App 🚗
 
-A React application built with Vite that provides both user and admin interfaces for managing car showroom data.
+A full-stack React application built with Vite that provides both user and admin interfaces for managing car showroom data.
 
-## Features
+## 👥 Development Team
+- **Project Manager (PM)**: Twe Tar Shin Thant Oo
+- **Coordinator**: Khant Maung
+- **Frontend Developer**: Tun Bhone Pyae Moe
+- **Backend Developer**: Han Myint Myat
+- **UI/UX Designer**: Su Myat Win khet
+
+## 📌 Features
 
 ### User Interface
 - Browse car cards with detailed information
@@ -16,14 +23,17 @@ A React application built with Vite that provides both user and admin interfaces
 - Delete cars
 - Car management dashboard
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - **Frontend**: React 18 with Vite
 - **Routing**: React Router DOM
 - **HTTP Client**: Axios
 - **Styling**: CSS3 with modern features
+- **Backend**: Node.js (Express) 
+- **Database**: MongoDB
+- **UI/UX**: Figma
 
-## Project Structure
+## 📂 Project Structure
 
 ```
 src/
@@ -105,21 +115,6 @@ npm run build
 ```
 
 The build artifacts will be stored in the `dist/` directory.
-
-## GitHub Repository Connection
-
-To connect this project to the GitHub repository:
-
-1. Install Git if not already installed
-2. Initialize Git and add remote:
-```bash
-git init
-git add .
-git commit -m "Initial commit - React car showroom project"
-git remote add origin https://github.com/NeeohHaze/Car-Showroom-UserSide-.git
-git branch -M main
-git push -u origin main
-```
 
 ## Contributing
 
