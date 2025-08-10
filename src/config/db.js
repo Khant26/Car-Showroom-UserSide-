@@ -6,6 +6,6 @@ export const connectDB = async () => {
     console.log("MONGOOSE CONNECTED SUCCESSFULLY!");
   } catch (error) {
     console.log("Error connected", error);
-    process.exist(1);
+    process.exit(1);
   }
 };

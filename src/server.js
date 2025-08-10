@@ -19,7 +19,7 @@ connectDB();
 //   next();
 // });
 
-app.use("/api/notes", itemsRoutes);
+app.use("/items", itemsRoutes);
 
 connectDB().then(() => {
   app.listen(PORT, () => {
