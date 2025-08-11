@@ -1,0 +1,131 @@
+# Car Showroom Web App 🚗
+
+A full-stack React application built with Vite that provides both user and admin interfaces for managing car showroom data.
+
+## 👥 Development Team
+- **Project Manager (PM)**: Twe Tar Shin Thant Oo
+- **Coordinator**: Khant Maung
+- **Frontend Developer**: Tun Bhone Pyae Moe
+- **Backend Developer**: Han Myint Myat
+- **UI/UX Designer**: Su Myat Win khet
+
+## 📌 Features
+
+### User Interface
+- Browse car cards with detailed information
+- Search functionality for cars
+- Filter cars by brand
+- Responsive design
+
+### Admin Interface
+- Add new cars
+- Edit existing car details
+- Delete cars
+- Car management dashboard
+
+## 🛠 Tech Stack
+
+- **Frontend**: React 18 with Vite
+- **Routing**: React Router DOM
+- **HTTP Client**: Axios
+- **Styling**: CSS3 with modern features
+- **Backend**: Node.js (Express) 
+- **Database**: MongoDB
+- **UI/UX**: Figma
+
+## 📂 Project Structure
+
+```
+src/
+├── components/
+│   ├── CarCard.jsx           # Reusable car card component
+│   ├── Navigation.jsx        # Navigation component
+│   └── admin/
+│       └── CarForm.jsx       # Form for adding/editing cars
+├── pages/
+│   ├── UserInterface.jsx     # User view page
+│   └── AdminInterface.jsx    # Admin dashboard page
+├── services/
+│   └── api.js               # API service functions
+└── App.jsx                  # Main app component
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- Git
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/NeeohHaze/Car-Showroom-UserSide-.git
+cd Car-Showroom-UserSide-
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## API Integration
+
+The application is configured to connect to a Node.js Express MongoDB API running on port 5000. The API base URL is set in `src/services/api.js`:
+
+```javascript
+const API_BASE_URL = 'http://localhost:5000'; // Backend server URL
+```
+
+### Expected API Endpoints
+
+- `GET /items/` - Get all cars
+- `GET /items/:id` - Get car by ID
+- `POST /items/` - Create new car (Admin)
+- `PUT /items/:id` - Update car (Admin)
+- `DELETE /items/:id` - Delete car (Admin)
+
+## Environment Configuration
+
+Create a `.env` file in the root directory for environment variables:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+**Important**: Make sure your backend server is running on `http://localhost:5000` before starting the frontend application.
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
