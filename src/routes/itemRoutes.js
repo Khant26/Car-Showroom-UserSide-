@@ -5,13 +5,17 @@ import {
   getAllDetails,
   updateItem,
   getItemById,
+  createImage,
+  updateImage
 } from "../controllers/itemsController.js";
 
 const router = express.Router();
 router.get("/", getAllDetails);
 router.get("/:id", getItemById);
-router.post("/items", createItem);
+router.post("/", createItem);
+router.post("/", createImage);
 router.put("/:id", updateItem);
+router.put("/:id", updateImage);
 router.delete("/:id", deleteItem);
 
 export default router;
