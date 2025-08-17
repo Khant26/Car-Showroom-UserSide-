@@ -1,19 +1,26 @@
-import express from "express";
-import itemsRoutes from "./routes/itemRoutes.js";
-import { connectDB } from "./config/db.js";
-import dotenv from "dotenv";
+/** @format */
 
-dotenv.config();
+import express from "express";
+import mongoose from "mongoose";
+import itemRoutes from "./routes/itemRoutes.js";
 
 const app = express();
-const PORT = process.env.PORT || 5001;
+app.use(express.json());
+import fs from "fs";
+import path from "path";
 
-app.use(express.json()); ///this middleware will parse Json bodies: req.body
+const uploadsDir = path.join(process.cwd(), "uploads");
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir);
+}
+app.use("/uploads", express.static(uploadsDir));
 
-app.use("/items", itemsRoutes);
+mongoose
+  .connect("mongodb://localhost:27017/mydb")
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => console.error(err));
 
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log("Sever is running", PORT);
-  });
-});
+app.use("/items", itemRoutes);
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
