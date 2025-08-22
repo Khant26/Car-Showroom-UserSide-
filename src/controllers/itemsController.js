@@ -1,143 +1,74 @@
-// /** @format */
+/** @format */
 
 // import Item from "../models/Item.js";
-// import Details from "../models/details.js";
+// import Category from "../models/details.js";
 
-// export async function getAllDetails(_, res) {
+// export async function getAllCategorys(_, res) {
 //   try {
-//     const items = await Item.find().sort({ createdAt: -1 }); // -1 will sort in desc. order(newest first)
-//     res.status(200).json(items);
+//     const categorys = await Category.find().sort({ createdAt: -1 }); // -1 will sort in desc. order(newest first)
+//     res.status(200).json(categorys);
 //   } catch (error) {
 //     console.error("Error", error);
 //     res.status(500).json({ message: "Internal server error" });
 //   }
 // }
 
-// export async function getAll(_, res) {
+// export async function getCategoryById(req, res) {
 //   try {
-//     const details = await Details.find().sort({ createdAt: -1 }).populate('itemId'); // -1 will sort in desc. order(newest first)
-//     res.status(200).json(details);
+//     const category = await Category.findById(req.params.id);
+//     if (!category) return res.status(404).json({ message: "Note not found!" });
+//     res.json(category);
 //   } catch (error) {
 //     console.error("Error", error);
 //     res.status(500).json({ message: "Internal server error" });
 //   }
 // }
 
-// export async function getItemById(req, res) {
-//   try {
-//     const item = await Item.findById(req.params.id);
-//     if (!item) return res.status(404).json({ message: "Note not found!" });
-//     res.json(item);
-//   } catch (error) {
-//     console.error("Error", error);
-//     res.status(500).json({ message: "Internal server error" });
-//   }
-// }
-
-// export async function createItem(req, res) {
+// export async function createCategory(req, res) {
 //   try {
 //     const {
-//       name
-//       // price,
-//       // description,
-//       // license,
-//       // enginePower,
-//       // fuelType,
-//       // transmission,
-//       // seat,
-//       // fuelEconomy,
-//       // engineType,
-//       // year,
-//       // color,
-//       // specialMark,
+     
 //     } = req.body;
-//     const item = new Item({
-//       name
-//       // price,
-//       // description,
-//       // license,
-//       // enginePower,
-//       // fuelType,
-//       // transmission,
-//       // seat,
-//       // fuelEconomy,
-//       // engineType,
-//       // year,
-//       // color,
-//       // specialMark,
+//     const item = new Category({
+    
 //     });
-//     const savedItem = await item.save();
-//     res.status(201).json(savedItem);
+//     const savedCategory = await category.save();
+//     res.status(201).json(savedCategory);
 //   } catch (error) {
 //     console.error("Error", error);
 //     res.status(500).json({ message: "Internal error" });
 //   }
 // }
 
-// // export async function updateItem(req, res) {
-// //   try {
-// //     const {
-// //       name,
-// //       price,
-// //       description,
-// //       license,
-// //       enginePower,
-// //       fuelType,
-// //       transmission,
-// //       seat,
-// //       fuelEconomy,
-// //       engineType,
-// //       year,
-// //       color,
-// //       specialMark,
-// //     } = req.body;
-// //     await Item.findByIdAndUpdate(req.params.id, {
-// //       name,
-// //       price,
-// //       description,
-// //       license,
-// //       enginePower,
-// //       fuelType,
-// //       transmission,
-// //       seat,
-// //       fuelEconomy,
-// //       engineType,
-// //       year,
-// //       color,
-// //       specialMark,
-// //     }),
-// //       {
-// //         new: true,
-// //       };
-// //     if (!updateItem) return res.status(404).json({ message: "Note not found" });
-// //     res.status(200).json(updateItem);
-// //   } catch (error) {
-// //     console.error("Error", error);
-// //     res.status(500).json({ message: "Internal error" });
-// //   }
-// // }
-
-// // export async function deleteItem(req, res) {
-// //   try {
-// //     const deletedItem = await Item.findByIdAndDelete(req.params.id);
-// //     if (!deletedItem) return res.status(404).json({ message: "Item not found" });
-// //     res.status(200).json({ message: "Item deleted" });
-// //   } catch (error) {
-// //     console.error("Error", error);
-// //     res.status(500).json({ message: "Internal error" });
-// //   }
-// // }
-
-// export async function createItemDetails(req, res) {
+// export async function updateCategory(req, res) {
 //   try {
-//     const { itemId, price } = req.body;
-//     const details = new Details({ itemId, price });
-//     const savedDetails = await details.save();
-//     res.status(201).json(savedDetails);
+//     const {
+      
+//     } = req.body;
+//     await Category.findByIdAndUpdate(req.params.id, {
+    
+//     }),
+//       {
+        
+//       };
+//     if (!updateCategory) return res.status(404).json({ message: "Category not found" });
+//     res.status(200).json(updateCategory);
 //   } catch (error) {
 //     console.error("Error", error);
 //     res.status(500).json({ message: "Internal error" });
 //   }
 // }
+
+// export async function deleteCategory(req, res) {
+//   try {
+//     const deletedCategory = await Category.findByIdAndDelete(req.params.id);
+//     if (!deletedCategory) return res.status(404).json({ message: "Category not found" });
+//     res.status(200).json({ message: "Category deleted" });
+//   } catch (error) {
+//     console.error("Error", error);
+//     res.status(500).json({ message: "Internal error" });
+//   }
+// }
+
 
 

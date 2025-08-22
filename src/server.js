@@ -3,6 +3,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import itemRoutes from "./routes/itemRoutes.js";
+import categoryRoutes from './routes/categoryRoutes.js';
 
 const app = express();
 app.use(express.json());
@@ -21,6 +22,7 @@ mongoose
   .catch((err) => console.error(err));
 
 app.use("/items", itemRoutes);
+app.use('/categories', categoryRoutes);
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
